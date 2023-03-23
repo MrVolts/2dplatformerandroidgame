@@ -11,6 +11,7 @@ public class Button {
     private final String text;
     private final int textSize;
 
+    // Constructor for a button
     public Button(int left, int top, int right, int bottom, int color, String text, int textSize) {
         rect = new Rect(left, top, right, bottom);
         paint = new Paint();
@@ -19,6 +20,7 @@ public class Button {
         this.textSize = textSize;
     }
 
+    // draw the button to the screen
     public void draw(Canvas canvas) {
         canvas.drawRect(rect, paint);
 
@@ -33,6 +35,7 @@ public class Button {
         canvas.drawText(text, xPos, yPos, textPaint);
     }
 
+    // check if the button is pressed
     public boolean isPressed(float x, float y) {
         return rect.contains((int) x, (int) y);
     }

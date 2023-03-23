@@ -20,7 +20,7 @@ public class TileMap {
         this.mapTiles = mapTiles;
         initialiseTilemap();
     }
-
+    // This method is called from the constructor to intialise the tilemap
     private void initialiseTilemap() {
         int[][] layout = maplayout.getLayout();
         tilemap = new Tile[MapLayout.NUMBER_OF_ROW_TILES][MapLayout.NUMBER_OF_COLUMN_TILES];
@@ -29,14 +29,14 @@ public class TileMap {
                 tilemap[iRow][iColumn] = Tile.getTile(layout[iRow][iColumn], mapTiles, getRectByIndex(iRow, iColumn));
             }
         }
-
+        // Create a bitmap to draw the map on in 8 bit color
         Bitmap.Config config = Bitmap.Config.ARGB_8888;
         mapBitmaps = Bitmap.createBitmap(
                 MapLayout.NUMBER_OF_COLUMN_TILES * MapLayout.TILE_WIDTH_PIXELS,
                 MapLayout.NUMBER_OF_ROW_TILES * MapLayout.TILE_HEIGHT_PIXELS,
                 config
         );
-
+        // Create a canvas to draw the map on
         Canvas mapCanvas = new Canvas(mapBitmaps);
 
         for (int iRow = 0; iRow < MapLayout.NUMBER_OF_ROW_TILES; iRow++) {
@@ -46,6 +46,7 @@ public class TileMap {
         }
     }
 
+    //
     private Rect getRectByIndex(int idxRow, int idxCol) {
         return new Rect(
                 idxCol * MapLayout.TILE_WIDTH_PIXELS,

@@ -21,7 +21,7 @@ public class MapLayout {
     public int[][] getLayout() {
         return layout;
     }
-
+    // This method is called from the constructor to intialise the layout and procedurally generate the map
     public void initialiseLayout() {
         layout = new int[NUMBER_OF_ROW_TILES][NUMBER_OF_COLUMN_TILES];
         OpenSimplex2 noise = new OpenSimplex2();

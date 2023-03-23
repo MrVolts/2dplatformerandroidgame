@@ -19,7 +19,7 @@ import com.example.simpleapp.map.TileMap;
  */
 public class Player extends GameObject {
     public static final double SPEED_PIXELS_PER_SECOND = 8;
-    public static final int MAX_HEALTH = 100;
+    public static final int MAX_HEALTH = 50;
     private static final double MAX_SPEED = SPEED_PIXELS_PER_SECOND / MainThread.MAX_UPS;
     private static final double SPELLS_PER_MINUTE = 120; // Adjust this value to control the firing rate
     private static final double SPELLS_PER_SECOND = SPELLS_PER_MINUTE / 60;
@@ -61,6 +61,7 @@ public class Player extends GameObject {
         }
     }
 
+    // Draws the player and the health bar
     public void draw(Canvas canvas, GameDisplay gameDisplay) {
         float drawPosX = gameDisplay.gameToDisplayCoordinatesX(posX);
         float drawPosY = gameDisplay.gameToDisplayCoordinatesY(posY);
@@ -75,6 +76,7 @@ public class Player extends GameObject {
         healthBar.draw(canvas, gameDisplay);
     }
 
+    // Method that takes in damage and reduces the player's health
     public void takeDamage(int damage) {
         if (damage >= healthPoints) {
             healthPoints = 0;
@@ -83,6 +85,7 @@ public class Player extends GameObject {
         }
     }
 
+    // Method that takes in a speed and adjusts it based on the tile the player is on
     private double adjustSpeedForTile(double speed) {
         TileType tileType = tileMap.getTileTypeAt(posX, posY);
 
@@ -96,6 +99,7 @@ public class Player extends GameObject {
         return speed;
     }
 
+    // Getter and setter methods for the player's health
     public int getHealthPoints() {
         return healthPoints;
     }
@@ -106,15 +110,18 @@ public class Player extends GameObject {
         }
     }
 
+    // Getter method for the player's max health
     public int getMaxHealth() {
         return MAX_HEALTH;
     }
 
+    // Method that restores the player's health after a wave
     public void restoreHealthAfterWave() {
         int restoredHealth = healthPoints + MAX_HEALTH / 2;
         setHealthPoints(Math.min(restoredHealth, MAX_HEALTH));
     }
 
+    // Method that checks if the player should fire a spell
     public boolean shouldFireSpell() {
         updatesSinceLastSpell++;
 

@@ -82,6 +82,7 @@ public abstract class GameObject {
 
     }
 
+    // Checks if an object is out of bounds of the screen
     public boolean isOutOfBounds(GameDisplay gameDisplay, float factor) {
         float screenPosX = gameDisplay.gameToDisplayCoordinatesX(posX);
         float screenPosY = gameDisplay.gameToDisplayCoordinatesY(posY);
@@ -95,6 +96,7 @@ public abstract class GameObject {
                 screenPosY < -offScreenY || screenPosY > screenHeight + offScreenY;
     }
 
+    // Checks if an object is inside the map bounds
     public boolean isPositionInsideMapBounds(int tileWidthPixels, int tileHeightPixels, int numberOfRows, int numberOfColumns, float newX, float newY) {
         int mapWidthPixels = tileWidthPixels * numberOfColumns;
         int mapHeightPixels = tileHeightPixels * numberOfRows;

@@ -9,12 +9,12 @@ public abstract class Tile {
 
     protected final Rect mapLocationRect;
     protected final TileType tileType;
-
+    // Constructor for a tile
     public Tile(Rect mapLocationRect, TileType tileType) {
         this.mapLocationRect = mapLocationRect;
         this.tileType = tileType;
     }
-
+    // Gets the tile for a specific location
     public static Tile getTile(int idxTileType, MapTiles mapTiles, Rect mapLocationRect) {
 
         switch (TileType.values()[idxTileType]) {
@@ -28,9 +28,10 @@ public abstract class Tile {
                 return null;
         }
     }
-
+    // Draws the tile
     public abstract void draw(Canvas canvas);
 
+    // Tile types
     public enum TileType {
         BASE2,
         BASE1,

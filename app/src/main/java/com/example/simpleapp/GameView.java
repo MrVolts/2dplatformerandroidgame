@@ -39,7 +39,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     private Stats stats;
     private GameDisplay gameDisplay;
 
-
+    // Initialize game objects
     public GameView(Context context) {
         super(context);
         SurfaceHolder surfaceHolder = getHolder();
@@ -55,6 +55,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         setFocusable(true);
     }
 
+    // Create main thread
     @Override
     public void surfaceCreated(SurfaceHolder holder) {
         if (thread.getState().equals(Thread.State.TERMINATED)) {
@@ -69,6 +70,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
     }
 
+    // Tries to restart the main thread
     @Override
     public void surfaceDestroyed(SurfaceHolder holder) {
         boolean retry = true;
@@ -82,6 +84,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         }
     }
 
+    // Handles touch events
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         // If the player is dead, the game is over and the player can only restart the game
@@ -118,6 +121,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         return true;
     }
 
+    // Draw all objects to the screen
     @Override
     public void draw(Canvas canvas) {
         super.draw(canvas);
@@ -148,7 +152,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         }
     }
 
-
+    //
     public void update() {
 
         // Stop updating if the player is dead
@@ -187,10 +191,12 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         }
     }
 
+    // Pause the game
     public void pause() {
         thread.stopLoop();
     }
 
+    // Resume the game
     public void restart() {
         SurfaceHolder surfaceHolder = getHolder();
         surfaceHolder.addCallback(this);
@@ -209,6 +215,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         thread.startLoop();
     }
 
+    // Fire a spell
     private void fireSpell() {
         double angle = joystick.getLastAngle();
         int spellWidth = 50; // Replace with desired width

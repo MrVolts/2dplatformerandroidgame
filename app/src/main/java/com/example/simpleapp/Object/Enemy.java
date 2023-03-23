@@ -27,16 +27,18 @@ public class Enemy extends GameObject {
     private static int waveNumber = 1;
     private final Player player;
 
-
+    // Constructor for Enemy class that takes in a bitmap
     public Enemy(Context context, Player player, int resourceId, int x, int y, int desiredWidth, int desiredHeight) {
         super(BitmapFactory.decodeResource(context.getResources(), resourceId), x, y, desiredWidth, desiredHeight);
         this.player = player;
     }
 
+    // getter for wave number
     public static int getWaveNumber() {
         return waveNumber;
     }
 
+    // getter for enemies remaining in wave
     public static int getEnemiesRemainingInWave() {
         return enemiesRemainingInWave;
     }
@@ -46,6 +48,7 @@ public class Enemy extends GameObject {
         return waveSize;
     }
 
+    // Resets wave info on game restart
     public static void resetWaveInfo() {
         waveSize = 5;
         enemiesRemainingInWave = waveSize;
@@ -54,6 +57,7 @@ public class Enemy extends GameObject {
         waveNumber = 1;
     }
 
+    // Checks if the an enemy should spawn
     public static boolean readyToSpawn() {
         if (enemiesRemainingInWave <= 0) {
             return false;
@@ -69,6 +73,7 @@ public class Enemy extends GameObject {
         }
     }
 
+    // Spawns an enemy randomly on the bounds of the screen
     public static Enemy spawnEnemy(Context context, Player player, GameDisplay gameDisplay, int resourceId, int desiredWidth, int desiredHeight) {
         // Choose a random border (0: top, 1: right, 2: bottom, 3: left)
         int border = (int) (Math.random() * 4);
@@ -105,6 +110,7 @@ public class Enemy extends GameObject {
         return new Enemy(context, player, resourceId, (int) gameSpawnX, (int) gameSpawnY, desiredWidth, desiredHeight);
     }
 
+    // Preps the next wave
     public static void resetWave() {
         waveSize = (int) Math.ceil(waveSize * ENEMY_COUNT_SCALAR_PER_WAVE);
         enemiesRemainingInWave = waveSize;
@@ -118,6 +124,7 @@ public class Enemy extends GameObject {
         updatesPerSpawn = MainThread.MAX_UPS / SPAWNS_PER_SECOND;
     }
 
+    // Updates all enemies and handles player damage
     public static void updateAll(List<Enemy> enemies, Player player, GameDisplay gameDisplay) {
         int baseDamage = 10;
         int damage = (int) (baseDamage * damageScalar);
@@ -130,7 +137,7 @@ public class Enemy extends GameObject {
                 player.takeDamage(damage);
             }
 
-            boolean isOutOfBounds = enemy.isOutOfBounds(gameDisplay, 100f);
+            boolean isOutOfBounds = enemy.isOutOfBounds(gameDisplay, 10f);
 
             return isCollidingWithPlayer || isOutOfBounds;
         });
@@ -141,6 +148,7 @@ public class Enemy extends GameObject {
         }
     }
 
+    // Updates the enemy's position
     public void update(Player player) {
         double distance = getDistance(this, player);
         if (distance > 0) {

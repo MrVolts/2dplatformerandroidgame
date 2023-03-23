@@ -11,6 +11,7 @@ import java.util.Optional;
 public class Spell extends GameObject {
     private final double speed;
 
+    // Constructor for Spell
     public Spell(Bitmap bmp, int x, int y, int desiredWidth, int desiredHeight, double angle, double speed) {
         super(bmp, x, y, desiredWidth, desiredHeight);
         this.speed = speed;
@@ -18,6 +19,7 @@ public class Spell extends GameObject {
         this.yVelocity = speed * Math.sin(angle);
     }
 
+    // updates all spells and removes them if they are out of bounds or collide with an enemy
     public static void updateAll(List<Spell> spells, List<Enemy> enemies, GameDisplay gameDisplay, Stats stats) {
         spells.removeIf(spell -> {
             spell.update();
@@ -39,6 +41,7 @@ public class Spell extends GameObject {
         });
     }
 
+    // updates the position of the spell
     public void update() {
         posX += xVelocity;
         posY += yVelocity;
