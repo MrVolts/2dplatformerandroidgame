@@ -454,21 +454,6 @@
             ]
         },
         {
-            "outputFile": "C:\\Users\\MrVolts\\.gradle\\daemon\\7.5\\com.example.simpleapp-merged_res-25:\\values-ldltr-v21_values-ldltr-v21.arsc.flat",
-            "map": [
-                {
-                    "source": "C:\\Users\\MrVolts\\.gradle\\caches\\transforms-3\\116430c231f652ec6cb468c7433d967b\\transformed\\appcompat-1.4.1\\res\\values-ldltr-v21\\values-ldltr-v21.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "112",
-                        "endOffsets": "163"
-                    }
-                }
-            ]
-        },
-        {
             "outputFile": "C:\\Users\\MrVolts\\.gradle\\daemon\\7.5\\com.example.simpleapp-merged_res-25:\\values-hi_values-hi.arsc.flat",
             "map": [
                 {
@@ -522,6 +507,21 @@
                         "startOffsets": "264,370,468,578,664,766,887,965,1042,1133,1226,1321,1415,1515,1608,1703,1797,1888,1979,2060,2165,2267,2365,2475,2578,2687,2845,7289",
                         "endColumns": "105,97,109,85,101,120,77,76,90,92,94,93,99,92,94,93,90,90,80,104,101,97,109,102,108,157,100,81",
                         "endOffsets": "365,463,573,659,761,882,960,1037,1128,1221,1316,1410,1510,1603,1698,1792,1883,1974,2055,2160,2262,2360,2470,2573,2682,2840,2941,7366"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\Users\\MrVolts\\.gradle\\daemon\\7.5\\com.example.simpleapp-merged_res-25:\\values-ldltr-v21_values-ldltr-v21.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\MrVolts\\.gradle\\caches\\transforms-3\\116430c231f652ec6cb468c7433d967b\\transformed\\appcompat-1.4.1\\res\\values-ldltr-v21\\values-ldltr-v21.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "112",
+                        "endOffsets": "163"
                     }
                 }
             ]
@@ -882,6 +882,40 @@
             ]
         },
         {
+            "outputFile": "C:\\Users\\MrVolts\\.gradle\\daemon\\7.5\\com.example.simpleapp-merged_res-25:\\values-v28_values-v28.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\MrVolts\\.gradle\\caches\\transforms-3\\6acbca7b40f0438e8e77ed68bb5757c6\\transformed\\material-1.5.0\\res\\values-v28\\values-v28.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,153,248,343,441,529,617,705,793,880,967,1054",
+                        "endColumns": "97,94,94,97,87,87,87,87,86,86,86,86",
+                        "endOffsets": "148,243,338,436,524,612,700,788,875,962,1049,1136"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\MrVolts\\.gradle\\caches\\transforms-3\\116430c231f652ec6cb468c7433d967b\\transformed\\appcompat-1.4.1\\res\\values-v28\\values-v28.xml",
+                    "from": {
+                        "startLines": "2,3,4,8",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,130,217,447",
+                        "endLines": "2,3,7,11",
+                        "endColumns": "74,86,12,12",
+                        "endOffsets": "125,212,442,684"
+                    },
+                    "to": {
+                        "startLines": "14,15,16,20",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "1141,1216,1303,1483",
+                        "endLines": "14,15,19,23",
+                        "endColumns": "74,86,12,12",
+                        "endOffsets": "1211,1298,1478,1670"
+                    }
+                }
+            ]
+        },
+        {
             "outputFile": "C:\\Users\\MrVolts\\.gradle\\daemon\\7.5\\com.example.simpleapp-merged_res-25:\\values-b+sr+Latn_values-b+sr+Latn.arsc.flat",
             "map": [
                 {
@@ -935,40 +969,6 @@
                         "endLines": "6,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87",
                         "endColumns": "12,79,93,131,80,65,92,67,62,102,65,55,70,59,53,111,56,60,53,75,124,86,82,108,81,82,87,66,65,73,77,88,75,75,74,71,89,72,91,95,71,75,95,52,66,86,86,61,63,62,104,103,95,106,79",
                         "endOffsets": "324,3135,3229,3361,3442,3508,3601,3669,3732,3835,3901,3957,4028,4088,4142,4254,4311,4372,4426,4502,4627,4714,4797,4906,4988,5071,5159,5226,5292,5366,5444,5533,5609,5685,5760,5832,5922,5995,6087,6183,6255,6331,6427,6480,6547,6634,6721,6783,6847,6910,7015,7119,7215,7322,7402"
-                    }
-                }
-            ]
-        },
-        {
-            "outputFile": "C:\\Users\\MrVolts\\.gradle\\daemon\\7.5\\com.example.simpleapp-merged_res-25:\\values-v28_values-v28.arsc.flat",
-            "map": [
-                {
-                    "source": "C:\\Users\\MrVolts\\.gradle\\caches\\transforms-3\\6acbca7b40f0438e8e77ed68bb5757c6\\transformed\\material-1.5.0\\res\\values-v28\\values-v28.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,153,248,343,441,529,617,705,793,880,967,1054",
-                        "endColumns": "97,94,94,97,87,87,87,87,86,86,86,86",
-                        "endOffsets": "148,243,338,436,524,612,700,788,875,962,1049,1136"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\MrVolts\\.gradle\\caches\\transforms-3\\116430c231f652ec6cb468c7433d967b\\transformed\\appcompat-1.4.1\\res\\values-v28\\values-v28.xml",
-                    "from": {
-                        "startLines": "2,3,4,8",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "55,130,217,447",
-                        "endLines": "2,3,7,11",
-                        "endColumns": "74,86,12,12",
-                        "endOffsets": "125,212,442,684"
-                    },
-                    "to": {
-                        "startLines": "14,15,16,20",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "1141,1216,1303,1483",
-                        "endLines": "14,15,19,23",
-                        "endColumns": "74,86,12,12",
-                        "endOffsets": "1211,1298,1478,1670"
                     }
                 }
             ]

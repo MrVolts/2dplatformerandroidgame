@@ -45,13 +45,13 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         SurfaceHolder surfaceHolder = getHolder();
         surfaceHolder.addCallback(this);
         thread = new MainThread(surfaceHolder, this);
-        stats = new Stats(thread);
+        stats = new Stats(thread, getContext());
         joystick = new Joystick(200, screenHeight - 200, 200, 100);
         MapTiles mapTiles = new MapTiles(context);
         tilemap = new TileMap(mapTiles);
         player = new Player(BitmapFactory.decodeResource(getResources(), R.drawable.playership), 9600, 9600, 150, 150, getContext(), tilemap);
         gameDisplay = new GameDisplay(screenWidth, screenHeight, player);
-        gameOver = new GameOver(context, screenWidth, screenHeight);
+        gameOver = new GameOver(context, screenWidth, screenHeight, stats.getHighScore());
         setFocusable(true);
     }
 
@@ -137,8 +137,13 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         }
         // Draws the FPS/UPS to the screen
         stats.draw(canvas);
-        // Draw game over if player health is 0
+
+        // Check if the player's health is 0
         if (player.getHealthPoints() <= 0) {
+            // Update and save high score if the current score is greater
+            if (stats.getScore() > stats.getHighScore()) {
+                stats.saveHighScore(stats.getScore());
+            }
             gameOver.draw(canvas, stats);
         }
     }
@@ -197,7 +202,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         player = new Player(BitmapFactory.decodeResource(getResources(), R.drawable.playership), 9600, 9600, 150, 150, getContext(), tilemap);
         enemies.clear();
         spells.clear();
-        stats = new Stats(thread);
+        stats = new Stats(thread, getContext());
         gameDisplay = new GameDisplay(screenWidth, screenHeight, player);
         Enemy.resetWaveInfo();
 

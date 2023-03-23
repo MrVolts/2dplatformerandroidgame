@@ -14,7 +14,6 @@ drawable grass
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable icon
-drawable play
 drawable playership
 drawable sand
 drawable scoutdrone

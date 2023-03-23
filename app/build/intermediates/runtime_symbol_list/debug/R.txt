@@ -2506,7 +2506,6 @@ int drawable notification_template_icon_bg 0x7f070097
 int drawable notification_template_icon_low_bg 0x7f070098
 int drawable notification_tile_bg 0x7f070099
 int drawable notify_panel_notification_icon_bg 0x7f07009a
-int drawable play 0x7f07009b
 int drawable playership 0x7f07009c
 int drawable sand 0x7f07009d
 int drawable scoutdrone 0x7f0700a5

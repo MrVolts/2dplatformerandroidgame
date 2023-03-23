@@ -86,8 +86,11 @@ public class Player extends GameObject {
     private double adjustSpeedForTile(double speed) {
         TileType tileType = tileMap.getTileTypeAt(posX, posY);
 
+        if (tileType == TileType.BASE1) {
+            return speed * 0.8; // Adjust this factor to control the slowdown on BASE2 tiles
+        }
         if (tileType == TileType.BASE2) {
-            return speed * 0.6; // Adjust this factor to control the slowdown on BASE2 tiles
+            return speed * 0.6; // Adjust this factor to control the slowdown on BASE1 tiles
         }
 
         return speed;

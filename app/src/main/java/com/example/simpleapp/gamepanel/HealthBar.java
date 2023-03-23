@@ -9,6 +9,11 @@ import androidx.core.content.ContextCompat;
 import com.example.simpleapp.GameDisplay;
 import com.example.simpleapp.Object.Player;
 import com.example.simpleapp.R;
+/**
+ * HealthBar class
+ *
+ * This class is responsible for drawing the health bar
+ */
 
 public class HealthBar {
     private final Player player;
@@ -19,6 +24,11 @@ public class HealthBar {
     private final int margin;
     private final Context context;
 
+    /**
+     * Constructor
+     */
+
+    // Contructor takes the player and context and adds the health bar with colors specified in the colors.xml file
     public HealthBar(Player player, Context context) {
         this.player = player;
         this.context = context;
@@ -37,10 +47,15 @@ public class HealthBar {
         this.healthPaint.setStyle(Paint.Style.FILL);
     }
 
+    /**
+     * Draw methods
+     */
+
+    // Draws the health bar above the player
     public void draw(Canvas canvas, GameDisplay gameDisplay) {
         float x = (float) player.getPositionX();
         float y = (float) player.getPositionY();
-        float distanceToPlayer = 50;
+        float distanceToPlayer = 70;
         float healthPointPercentage = (float) player.getHealthPoints() / (float) player.getMaxHealth();
 
         // Draw border
